@@ -6,7 +6,7 @@ fp = Path.cwd()/"group_project"/"csv_reports"/"Cash on Hand.csv"
 with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     reader = csv.reader(file)
     next(reader)
-    
+
     prev_coh = 0
 
     day = []
@@ -31,7 +31,7 @@ def value(day, cashonhand, prev_coh):
         if float(i) > prev_coh:
             counter += 1
         else:
-            return f"[CASH DEFICIT] DAY:{day[num-1]}, AMOUNT:USD{i - prev_coh}"    
+            return f"[CASH DEFICIT] DAY:{day[num-1]}, AMOUNT:USD{i - prev_coh}" 
         prev_coh = float(i)
         num += 1
 
