@@ -1,7 +1,7 @@
 from pathlib import Path
 import csv
 
-file_path = Path.cwd()/"overheads-day-90.csv"
+file_path = Path.cwd()/"Overheads.csv"
 
 
 with file_path.open(mode='r', encoding='UTF-8') as file:
@@ -21,27 +21,4 @@ with file_path.open(mode='r', encoding='UTF-8') as file:
             num.remove(each_value)
             break
     print(diction['Salary Expense'])
-    
-
-    #for row in reader:
-        #numbers = (row[1])
-        #num.append(float(numbers))
-    #print(max(num))
-        #everything.append(row[0])
-        #num.append(float(row[1]))
-        #diction = {} 
-        #for each in cat:
-        #    print(each)
-        #    for every in num:
-        #        diction[each] = every
-        #        num.remove(every)
-        #        break
-        #    print(diction)
-
-    #print(everything)
-    #print(cat)
-    #print(num)
-
-    
-        
     
