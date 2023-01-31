@@ -7,7 +7,7 @@ with file_path.open(mode='r', encoding='UTF-8') as file:
     reader = csv.reader(file)
     # skip the header
     next(reader)
-    # create empty lists to store the cateogories and values
+    # create empty lists to store the categories and values
     cat = []
     num = []
     for row in reader:
