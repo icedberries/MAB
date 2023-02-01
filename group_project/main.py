@@ -4,9 +4,9 @@ def main():
 
     overheads
 
-    cash_on_hand.value_function()
+    cash_on_hand.value
     
-    profit_loss.profit()
+    profit_loss.profit
 
 main()
 
