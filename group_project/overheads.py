@@ -12,13 +12,14 @@ with file_path.open(mode='r', encoding='UTF-8') as file:
     cat = []
     num = []
 
+    for row in reader:
+        cat.append(row[0])
+        num.append(float(row[1]))
+
 def overhead():
     """
     - The function
     """
-    for row in reader:
-        cat.append(row[0])
-        num.append(float(row[1]))
     # create an empty dictionary
     diction = {}
     for each_value in num:

@@ -12,7 +12,7 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     day = []
     cashonhand = []
 
-    for row in reader:           
+    for row in reader:
         day.append(row[0])
         cashonhand.append(row[1])
 
