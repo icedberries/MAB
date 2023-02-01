@@ -15,9 +15,6 @@ with file_path.open(mode="r", encoding="UTF-8", newline="") as file:
         Day.append(row[0])
         netprofit.append(row[4])
 
-    print(Day)
-    print(netprofit)
-
 def profit():
 
     counter = 0
@@ -28,10 +25,10 @@ def profit():
         if float(i) > previous_profit:
             counter += 1
         else:
-            print(f"[CASH DEFICIT] DAY:{Day[num]}, AMOUNT: USD{float(i) - previous_profit}")
+            print(f"[PROFIT DEFICIT] DAY:{Day[num]}, AMOUNT: USD{float(i) - previous_profit}")
 
         previous_profit = float(i)
         num += 1
 
         if counter == 6:
-            return "[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
+            return "[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"

@@ -16,9 +16,6 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
         day.append(row[0])
         cashonhand.append(row[1])
 
-    print(day)
-    print(cashonhand)
-
 def value():
     """
     - This function

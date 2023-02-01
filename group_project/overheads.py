@@ -27,5 +27,4 @@ def overhead():
             diction[each_value] = each_cat
             value = max(diction)
     return f"[HIGHEST OVERHEADS] {diction[value].upper()}: {value}"
-
-print(overhead())
+   
