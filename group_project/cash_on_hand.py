@@ -46,5 +46,3 @@ def value():
         else:
             file.writelines(message)
     file.close()
-
-print(value())
