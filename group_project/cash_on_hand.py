@@ -35,11 +35,15 @@ def value():
             if float(i) > prev_coh:
                 counter += 1
                 if counter == 6:
-                    message = "[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
+                    message = ["[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"]
             else:
-                message.append(f"[CASH DEFICIT] DAY:{day[num]}, AMOUNT:USD{prev_coh - i}")
+                message.append(f"[CASH DEFICIT] DAY:{day[num]}, AMOUNT:USD{prev_coh - float(i)}")
             prev_coh = float(i)
             num += 1
-        for i in message:
-            file.writelines(f"{i}\n")
+
+        if len(message) > 1:
+            for i in message:
+                file.writelines(f"{i}\n")
+        else:
+            file.writelines(message)
     file.close()
