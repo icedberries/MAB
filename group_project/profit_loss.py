@@ -32,3 +32,4 @@ def profit():
 
         if counter == 6:
             return "[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
+        
