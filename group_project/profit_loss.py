@@ -39,5 +39,3 @@ def profit():
         for i in message:
             file.writelines(f"{i}\n")
     file.close()
-
-print(profit())
