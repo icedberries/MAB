@@ -24,6 +24,14 @@ with file_path.open(mode='r', encoding='UTF-8') as file:
         # use float() to convert strings to float to find maximum 
         num.append(float(row[1]))
 
+    for row in reader:
+        cat.append(row[0])
+        num.append(float(row[1]))
+
+def overhead():
+    """
+    - The function
+    """
     # create an empty dictionary
     diction = {}
     
@@ -34,5 +42,4 @@ with file_path.open(mode='r', encoding='UTF-8') as file:
             # assign a variable when finding the maximum value 
             value = max(diction)
     return f"[HIGHEST OVERHEADS] {diction[value].upper()}: {value}"
-
-print(overhead())
+   

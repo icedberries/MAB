@@ -12,14 +12,11 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     day = []
     cashonhand = []
 
-    for row in reader:           
+    for row in reader:
         day.append(row[0])
         cashonhand.append(row[1])
 
-    print(day)
-    print(cashonhand)
-
-def value(day, cashonhand, prev_coh):
+def value():
     """
     - This function
     """
@@ -27,11 +24,13 @@ def value(day, cashonhand, prev_coh):
     counter = 0
     num = 0
 
+    global cashonhand, prev_coh, day
+
     for i in cashonhand:
         if float(i) > prev_coh:
             counter += 1
         else:
-            return f"[CASH DEFICIT] DAY:{day[num-1]}, AMOUNT:USD{i - prev_coh}"
+            return f"[CASH DEFICIT] DAY:{day[num-1]}, AMOUNT:USD{prev_coh - i}"
         prev_coh = float(i)
         num += 1
 
