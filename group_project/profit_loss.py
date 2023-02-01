@@ -34,7 +34,7 @@ def profit():
             if float(i) > previous_profit:
                 counter += 1      
                 if counter == 6:
-                    message = ["[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"]
+                    message = "[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
             else:
                 message.append(f"[PROFIT DEFICIT] DAY:{Day[num]}, AMOUNT: USD{previous_profit - float(i)}")
 
@@ -42,7 +42,7 @@ def profit():
             num += 1
         if len(message) > 1:
             for i in message:
-                file.writelines(f"{i}\n")
+                file.writelines(f"\n{i}")
         else:
-            file.writelines(message)
+            file.write(message)
     file.close()

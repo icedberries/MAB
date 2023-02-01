@@ -7,8 +7,6 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     reader = csv.reader(file)
     next(reader)
 
-    prev_coh = 0
-
     day = []
     cashonhand = []
 
@@ -25,11 +23,12 @@ def value():
     # use mode = "a" to append data to file
     with fp.open(mode = "a", encoding= "UTF-8") as file:
 
+        prev_coh = 0
         message = []
         counter = 0
         num = 0
 
-        global cashonhand, prev_coh, day
+        global cashonhand, day
 
         for i in cashonhand:
             if float(i) > prev_coh:
@@ -43,7 +42,9 @@ def value():
 
         if len(message) > 1:
             for i in message:
-                file.writelines(f"{i}\n")
+                file.writelines(f"{i}")
         else:
             file.writelines(message)
     file.close()
+
+print(value())
