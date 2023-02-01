@@ -36,5 +36,3 @@ def profit(Day,netprofit,previous_profit):
 
         if counter == 6:
             return "[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
-
-print(profit(Day,netprofit,previous_profit))
