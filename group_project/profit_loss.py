@@ -25,7 +25,7 @@ def profit():
         if float(i) > previous_profit:
             counter += 1
         else:
-            print(f"[PROFIT DEFICIT] DAY:{Day[num]}, AMOUNT: USD{float(i) - previous_profit}")
+            print(f"[PROFIT DEFICIT] DAY:{Day[num]}, AMOUNT: USD{previous_profit - float(i)}")
 
         previous_profit = float(i)
         num += 1
