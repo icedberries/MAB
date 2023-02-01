@@ -17,19 +17,27 @@ with file_path.open(mode="r", encoding="UTF-8", newline="") as file:
 
 def profit():
 
-    counter = 0
-    num = 0
-    previous_profit = 0
+    fp = Path.cwd()/"group_project"/"summary_report.txt"
+    # use mode = "a" to append data to file
+    with fp.open(mode = "a", encoding= "UTF-8") as file:
 
-    for i in netprofit:
-        if float(i) > previous_profit:
-            counter += 1
-        else:
-            print(f"[PROFIT DEFICIT] DAY:{Day[num]}, AMOUNT: USD{previous_profit - float(i)}")
+        message = []
+        counter = 0
+        num = 0
+        previous_profit = 0
 
-        previous_profit = float(i)
-        num += 1
+        for i in netprofit:
+            if float(i) > previous_profit:
+                counter += 1      
+                if counter == 6:
+                    message = "[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
+            else:
+                message.append(f"[PROFIT DEFICIT] DAY:{Day[num]}, AMOUNT: USD{previous_profit - float(i)}")
 
-        if counter == 6:
-            return "[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
-        
+            previous_profit = float(i)
+            num += 1
+        for i in message:
+            file.writelines(f"{i}\n")
+    file.close()
+
+print(profit())
