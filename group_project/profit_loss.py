@@ -20,7 +20,7 @@ with file_path.open(mode="r", encoding="UTF-8", newline="") as file:
     print(Day)
     print(netprofit)
 
-def profit(Day,netprofit,previous_profit):
+def profit():
 
     counter = 0
     num = 0

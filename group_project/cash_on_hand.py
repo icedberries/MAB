@@ -19,13 +19,15 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     print(day)
     print(cashonhand)
 
-def value(day, cashonhand, prev_coh):
+def value():
     """
     - This function
     """
 
     counter = 0
     num = 0
+
+    global cashonhand, prev_coh, day
 
     for i in cashonhand:
         if float(i) > prev_coh:
