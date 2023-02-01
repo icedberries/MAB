@@ -24,9 +24,11 @@ with file_path.open(mode='r', encoding='UTF-8') as file:
         # use float() to convert strings to float to find maximum 
         num.append(float(row[1]))
 
+# creation of function 
 def overhead():
     """
-    - The function
+    - The function merges the two lists created from above into a dictionary
+    - The function then finds the maximum value and its relevant cateogory
     """
     # create an empty dictionary
     diction = {}
@@ -34,8 +36,10 @@ def overhead():
     # merging of two lists into a dictionary by for loop
     for each_value in num:
         for each_cat in cat:
+            # assigning each value to their respective categories
             diction[each_value] = each_cat
             # assign a variable when finding the maximum value 
             value = max(diction)
+    # return using f strings
     return f"[HIGHEST OVERHEADS] {diction[value].upper()}: {value}"
    
