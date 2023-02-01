@@ -30,7 +30,7 @@ def value():
         if float(i) > prev_coh:
             counter += 1
         else:
-            return f"[CASH DEFICIT] DAY:{day[num-1]}, AMOUNT:USD{prev_coh - i}"
+            return f"[CASH DEFICIT] DAY:{day[num]}, AMOUNT:USD{prev_coh - i}"
         prev_coh = float(i)
         num += 1
 
