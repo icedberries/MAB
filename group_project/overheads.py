@@ -9,9 +9,8 @@ with file_path.open(mode='r', encoding='UTF-8') as file:
     next(reader)
     # create empty lists to store the categories and values
 
-cat = []
-
-num = []
+    cat = []
+    num = []
 
 def overhead():
     """
@@ -20,7 +19,7 @@ def overhead():
     for row in reader:
         cat.append(row[0])
         num.append(float(row[1]))
-    # create an empty dictionary 
+    # create an empty dictionary
     diction = {}
     for each_value in num:
         for each_cat in cat:
