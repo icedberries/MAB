@@ -7,8 +7,6 @@ file_path = Path.cwd()/"group_project/csv_reports/Profit and Loss.csv"
 with file_path.open(mode="r", encoding="UTF-8", newline="") as file:
     reader = csv.reader(file)
     next(reader)
-    
-    previous_profit = 0
 
     Day = []
     netprofit = []
@@ -24,6 +22,7 @@ def profit():
 
     counter = 0
     num = 0
+    previous_profit = 0
 
     for i in netprofit:
         if float(i) > previous_profit:
