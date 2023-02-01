@@ -40,9 +40,8 @@ def profit():
 
             previous_profit = float(i)
             num += 1
-        if len(message) > 1:
-            for i in message:
-                file.writelines(f"\n{i}")
-        else:
-            file.write(message)
+        for i in message:
+            file.writelines(i,"\n")
     file.close()
+
+print(profit())
