@@ -21,18 +21,25 @@ def value():
     - This function
     """
 
-    counter = 0
-    num = 0
+    fp = Path.cwd()/"group_project"/"summary_report.txt"
+    # use mode = "a" to append data to file
+    with fp.open(mode = "a", encoding= "UTF-8") as file:
 
-    global cashonhand, prev_coh, day
+        message = []
+        counter = 0
+        num = 0
 
-    for i in cashonhand:
-        if float(i) > prev_coh:
-            counter += 1
-        else:
-            return f"[CASH DEFICIT] DAY:{day[num]}, AMOUNT:USD{prev_coh - i}"
-        prev_coh = float(i)
-        num += 1
+        global cashonhand, prev_coh, day
 
-    if counter == 6:
-        return "[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
+        for i in cashonhand:
+            if float(i) > prev_coh:
+                counter += 1
+                if counter == 6:
+                    message = "[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
+            else:
+                message.append(f"[CASH DEFICIT] DAY:{day[num]}, AMOUNT:USD{prev_coh - i}")
+            prev_coh = float(i)
+            num += 1
+        for i in message:
+            file.writelines(f"{i}\n")
+    file.close()

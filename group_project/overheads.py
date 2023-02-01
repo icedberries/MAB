@@ -4,7 +4,7 @@ from pathlib import Path
 import csv
 
 # specification of file path for reading
-file_path = Path.cwd()/"csv_reports"/"Overheads.csv"
+file_path = Path.cwd()/"group_project"/"csv_reports"/"Overheads.csv"
 
 with file_path.open(mode='r', encoding='UTF-8') as file:
     # instantiate a read object
@@ -30,16 +30,21 @@ def overhead():
     - The function merges the two lists created from above into a dictionary
     - The function then finds the maximum value and its relevant cateogory
     """
-    # create an empty dictionary
-    diction = {}
-    
-    # merging of two lists into a dictionary by for loop
-    for each_value in num:
-        for each_cat in cat:
-            # assigning each value to their respective categories
-            diction[each_value] = each_cat
-            # assign a variable when finding the maximum value 
-            value = max(diction)
-    # return using f strings
-    return f"[HIGHEST OVERHEADS] {diction[value].upper()}: {value}"
-   
+    fp = Path.cwd()/"group_project"/"summary_report.txt"
+    # use mode = "a" to append data to file
+    with fp.open(mode = "w", encoding= "UTF-8") as file:    
+        
+        # create an empty dictionary
+        diction = {}
+
+        # merging of two lists into a dictionary by for loop
+        for each_value in num:
+            for each_cat in cat:
+                # assigning each value to their respective categories
+                diction[each_value] = each_cat
+                # assign a variable when finding the maximum value 
+                value = max(diction)
+        # create a variable to store f strings
+        message = f"[HIGHEST OVERHEADS] {diction[value].upper()}: {value}"
+        file.writelines(message)
+    file.close()
