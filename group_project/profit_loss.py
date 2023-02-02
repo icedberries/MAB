@@ -30,6 +30,7 @@ def profit():
     for i in netprofit: 
         #use float function to change net profit data in excel from string to number
         if float(i) > previous_profit:
+            # 1 is added to counter and the value is assigned back to counter
             counter += 1
         else:
         # if profit data does not fulfill the if statement above (current day profit > previous day profit), profit deficit will be printed
@@ -37,6 +38,7 @@ def profit():
             print(f"[PROFIT DEFICIT] DAY:{Day[num]}, AMOUNT: USD{previous_profit - float(i)}")
 
         previous_profit = float(i)
+        # 1 is added to num and the value is assigned back to num
         num += 1
 
         # use if counter == 6 to see if current day profit > previous day profit throughtout the 6 days
