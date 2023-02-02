@@ -26,14 +26,7 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
 #define value()
 def value():
     """
-    - This function creates a path object for summary_report.txt and append data to file.
-    - This function uses a global keyword to modify cashonhand and day variable outside it.
-    - This function adds 1 to the counter variable if index of cashonhand is larger than prev_coh.
-    - This function adds a string to the message list if counter is equivalent to number of days.
-    - This function adds str appended to message list when there is no cash surplus.
-    - This function writes file.writelines(f"{i}") if length of i is greater than 1.
-    - This function writes file.writelines(message) if length of i is not greater than 1.
-    - This function closes summary_report.txt.
+    - This function identifies which days have a cash deficit or a cash surplus
     """
     # create a path object for summary_report.txt
     fp = Path.cwd()/"group_project"/"summary_report.txt"
@@ -74,7 +67,7 @@ def value():
             # for loop
             for i in message:
                 # write multiple lines using writelines()
-                file.writelines(f"{i}")
+                file.writelines(f"{i}\n")
         else:
             # write multiple lines using writelines
             file.writelines(message)
