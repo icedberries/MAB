@@ -50,6 +50,7 @@ def value():
 
             #if iteration to find if index of cashonhand is larger than prev_coh
             if float(i) > prev_coh:
+                #1 is added to counter variable and the value is referenced back to counter variable
                 counter += 1
                 if counter == 6:
                     message = ["[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"]
