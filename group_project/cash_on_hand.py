@@ -52,6 +52,7 @@ def value():
             if float(i) > prev_coh:
                 #1 is added to counter variable and the value is referenced back to counter variable
                 counter += 1
+                #if iteration to find if counter is equivalent to number of days, indicating all days have a cash surplus
                 if counter == 6:
                     message = ["[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"]
             else:
