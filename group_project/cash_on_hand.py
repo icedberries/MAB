@@ -31,7 +31,7 @@ def value():
     - This function uses a global keyword to modify cashonhand and day variable outside the function.
     - This function adds 1 to the counter variable if index of cashonhand is larger than prev_coh.
     - This function adds a string to the message list if counter is equivalent to number of days.
-    - This function adds str containing day, prev_coh and i variable appended to message list when there is no cash surplus.
+    - This function adds str appended to message list when there is no cash surplus.
     - This function writes file.writelines(f"{i}") if iteration to find if length of i is greater than 1.
     - This function writes file.writelines(message) if iteration to find if length of i is not greater than 1.
     - This function closes summary_report.txt.
