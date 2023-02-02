@@ -9,7 +9,7 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     reader = csv.reader(file)
     next(reader)
 
-#create an empty variable for the cash on hand for the previous day
+#create an empty variable for cash on hand for the previous day
     prev_coh = 0
 
 #create an empty list to store the days
@@ -18,11 +18,12 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
 #create an empty list to store the cash on hand
     cashonhand = []
 
-
+#append day and cash on hand as a list back to each empty list using the for loop
     for row in reader:           
         day.append(row[0])
         cashonhand.append(row[1])
 
+#define value()
 def value():
     """
     - This function
