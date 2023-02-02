@@ -34,44 +34,44 @@ def value():
     # use mode = "a" to append data to file
     with fp.open(mode = "a", encoding= "UTF-8") as file:
 
-        #create an empty variable for cash on hand for the previous day
+        # create an empty variable for cash on hand for the previous day
         prev_coh = 0
-        #create an empty list for message
+        # create an empty list for message
         message = []
-        #create an empty variable for counter
+        # create an empty variable for counter
         counter = 0
-        #create an empty variable for number
+        # create an empty variable for number
         num = 0
         
-        #use a global keyword to modify cashonhand and day variable outside the function
+        # use a global keyword to modify cashonhand and day variable outside the function
         global cashonhand, day
 
-        #for loop
+        # for loop
         for i in cashonhand:
 
-            #if iteration to find if index of cashonhand is larger than prev_coh
+            # if iteration to find if index of cashonhand is larger than prev_coh
             if float(i) > prev_coh:
-                #1 is added to counter variable and the value is referenced back to counter variable
+                # 1 is added to counter variable and the value is referenced back to counter variable
                 counter += 1
-                #if iteration to find if counter is equivalent to number of days, indicating all days have a cash surplus
+                # if iteration to find if counter is equivalent to number of days, indicating all days have a cash surplus
                 if counter == 6:
                     # str added to message list
                     message = ["[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"]
-            #f str containing day, prev_coh and i variable appended to message list
+            # f str containing day, prev_coh and i variable appended to message list
             else:
                 message.append(f"[CASH DEFICIT] DAY:{day[num]}, AMOUNT:USD{prev_coh - float(i)}")
-            #prev_coh variable containing current i value
+            # prev_coh variable containing current i value
             prev_coh = float(i)
-            #1 is added to num variable and the value is referenced back to num variable
+            # 1 is added to num variable and the value is referenced back to num variable
             num += 1
-        #if iteration to find if length of i is greater than 1
+        # if iteration to find if length of i is greater than 1
         if len(message) > 1:
-            #for loop
+            # for loop
             for i in message:
-                #write multiple lines using writelines()
+                # write multiple lines using writelines()
                 file.writelines(f"{i}")
         else:
-            #write multiple lines using writelines
+            # write multiple lines using writelines
             file.writelines(message)
     # close summary_report.txt
     file.close()
