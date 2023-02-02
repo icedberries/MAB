@@ -45,6 +45,6 @@ def overhead():
                 # assign a variable when finding the maximum value 
                 value = max(diction)
         # create a variable to store f strings
-        message = f"[HIGHEST OVERHEADS] {diction[value].upper()}: {value}"
+        message = f"[HIGHEST OVERHEADS] {diction[value].upper()}: {value}%"
         file.write(f"{message}\n")
     file.close()
