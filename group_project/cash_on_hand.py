@@ -12,8 +12,10 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
 #create an empty variable for the cash on hand for the previous day
     prev_coh = 0
 
+#create an empty list to store the days
     day = []
 
+#create an empty list to store the cash on hand
     cashonhand = []
 
 
@@ -21,26 +23,35 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
         day.append(row[0])
         cashonhand.append(row[1])
 
-    print(day)
-    print(cashonhand)
-
-def value(day, cashonhand, prev_coh):
+def value():
     """
     - This function
     """
 
-    counter = 0
-    num = 0
+    fp = Path.cwd()/"group_project"/"summary_report.txt"
+    # use mode = "a" to append data to file
+    with fp.open(mode = "a", encoding= "UTF-8") as file:
 
-    for i in cashonhand:
-        if float(i) > prev_coh:
-            counter += 1
+        prev_coh = 0
+        message = []
+        counter = 0
+        num = 0
+
+        global cashonhand, day
+
+        for i in cashonhand:
+            if float(i) > prev_coh:
+                counter += 1
+                if counter == 6:
+                    message = ["[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"]
+            else:
+                message.append(f"[CASH DEFICIT] DAY:{day[num]}, AMOUNT:USD{prev_coh - float(i)}")
+            prev_coh = float(i)
+            num += 1
+
+        if len(message) > 1:
+            for i in message:
+                file.writelines(f"{i}")
         else:
-            return f"[CASH DEFICIT] DAY:{day[num-1]}, AMOUNT:USD{i - prev_coh}" 
-        prev_coh = float(i)
-        num += 1
-
-    if counter == 6:
-        return "[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"
-
-print(value(day, cashonhand, prev_coh))
+            file.writelines(message)
+    file.close()
