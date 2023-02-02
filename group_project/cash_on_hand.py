@@ -54,9 +54,12 @@ def value():
                 counter += 1
                 #if iteration to find if counter is equivalent to number of days, indicating all days have a cash surplus
                 if counter == 6:
+                    # str added to message list
                     message = ["[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"]
+            #f str containing day, prev_coh and i variable appended to message list
             else:
                 message.append(f"[CASH DEFICIT] DAY:{day[num]}, AMOUNT:USD{prev_coh - float(i)}")
+            #prev_coh variable containing current i value
             prev_coh = float(i)
             num += 1
 
