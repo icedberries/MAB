@@ -26,7 +26,8 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
 #define value()
 def value():
     """
-    - This function
+    - This function create a path object for summary_report.txt and append data to file
+    -
     """
     # create a path object for summary_report.txt
     fp = Path.cwd()/"group_project"/"summary_report.txt"
