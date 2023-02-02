@@ -27,13 +27,12 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
 def value():
     """
     - This function creates a path object for summary_report.txt and append data to file.
-    - This function creates an empty variable for prev_coh, counter and num and empty list for message.
-    - This function uses a global keyword to modify cashonhand and day variable outside the function.
+    - This function uses a global keyword to modify cashonhand and day variable outside it.
     - This function adds 1 to the counter variable if index of cashonhand is larger than prev_coh.
     - This function adds a string to the message list if counter is equivalent to number of days.
     - This function adds str appended to message list when there is no cash surplus.
-    - This function writes file.writelines(f"{i}") if iteration to find if length of i is greater than 1.
-    - This function writes file.writelines(message) if iteration to find if length of i is not greater than 1.
+    - This function writes file.writelines(f"{i}") if length of i is greater than 1.
+    - This function writes file.writelines(message) if length of i is not greater than 1.
     - This function closes summary_report.txt.
     """
     # create a path object for summary_report.txt
@@ -49,7 +48,6 @@ def value():
         counter = 0
         # create an empty variable for number
         num = 0
-        
         # use a global keyword to modify cashonhand and day variable outside the function
         global cashonhand, day
 
@@ -58,11 +56,11 @@ def value():
 
             # if iteration to find if index of cashonhand is larger than prev_coh
             if float(i) > prev_coh:
-                # 1 is added to counter variable and the value is referenced back to counter variable
+                # 1 is added to counter variable and the value is referenced back to it
                 counter += 1
-                # if iteration to find if counter is equivalent to number of days, indicating all days have a cash surplus
+                # if iteration to find if counter is equivalent to number of days
                 if counter == 6:
-                    # str added to message list
+                    # str added to message list to indicate all days have a cash surplus
                     message = ["[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY"]
             # f str containing day, prev_coh and i variable appended to message list
             else:
