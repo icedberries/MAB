@@ -1,8 +1,10 @@
 from pathlib import Path
 import csv
 
+#create a file to csv file
 fp = Path.cwd()/"group_project"/"csv_reports"/"Cash on Hand.csv"
 
+#read the csv file to append day and cash on hand from the csv
 with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     reader = csv.reader(file)
     next(reader)
@@ -10,7 +12,9 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     prev_coh = 0
 
     day = []
+
     cashonhand = []
+
 
     for row in reader:           
         day.append(row[0])
