@@ -28,15 +28,20 @@ def value():
     """
     - This function
     """
-
+    # create a path object for summary_report.txt
     fp = Path.cwd()/"group_project"/"summary_report.txt"
     # use mode = "a" to append data to file
     with fp.open(mode = "a", encoding= "UTF-8") as file:
-
+        
+        #create an empty variable for cash on hand for the previous day
         prev_coh = 0
+        #create an empty list for message
         message = []
+        #create an empty variable for counter
         counter = 0
+        #create an empty variable for number
         num = 0
+        
 
         global cashonhand, day
 
@@ -55,4 +60,5 @@ def value():
                 file.writelines(f"{i}")
         else:
             file.writelines(message)
+    # close summary_report.txt
     file.close()
