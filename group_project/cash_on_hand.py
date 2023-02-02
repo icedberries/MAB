@@ -26,7 +26,7 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
 #define value()
 def value():
     """
-    - This function identifies which days have a cash deficit or a cash surplus
+    - This function identifies which days have a cash deficit or a cash surplus.
     """
     # create a path object for summary_report.txt
     fp = Path.cwd()/"group_project"/"summary_report.txt"
