@@ -61,12 +61,16 @@ def value():
                 message.append(f"[CASH DEFICIT] DAY:{day[num]}, AMOUNT:USD{prev_coh - float(i)}")
             #prev_coh variable containing current i value
             prev_coh = float(i)
+            #1 is added to num variable and the value is referenced back to num variable
             num += 1
-
+        #if iteration to find if length of i is greater than 1
         if len(message) > 1:
+            #for loop
             for i in message:
+                #write multiple lines using writelines()
                 file.writelines(f"{i}")
         else:
+            #write multiple lines using writelines
             file.writelines(message)
     # close summary_report.txt
     file.close()
