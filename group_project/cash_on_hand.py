@@ -32,7 +32,7 @@ def value():
     fp = Path.cwd()/"group_project"/"summary_report.txt"
     # use mode = "a" to append data to file
     with fp.open(mode = "a", encoding= "UTF-8") as file:
-        
+
         #create an empty variable for cash on hand for the previous day
         prev_coh = 0
         #create an empty list for message
@@ -42,7 +42,7 @@ def value():
         #create an empty variable for number
         num = 0
         
-
+        #use a global keyword to modify cashonhand and day variable outside the function
         global cashonhand, day
 
         for i in cashonhand:
