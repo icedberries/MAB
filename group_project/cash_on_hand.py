@@ -45,7 +45,10 @@ def value():
         #use a global keyword to modify cashonhand and day variable outside the function
         global cashonhand, day
 
+        #for loop
         for i in cashonhand:
+
+            #if iteration to find if index of cashonhand is larger than prev_coh
             if float(i) > prev_coh:
                 counter += 1
                 if counter == 6:
