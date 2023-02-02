@@ -4,7 +4,7 @@ import cash_on_hand, overheads, profit_loss
 
 def main():
     """
-    Function that executes all 3 functions in previously imported files
+    This function wil execute all 3 functions in previously imported files
     """
     
     # Executes the overhead() function from the overheads file
@@ -16,5 +16,5 @@ def main():
     # Executes the profit() function from the profit_loss file
     profit_loss.profit()
 
-# Executes the main function
+# Executes the main() function
 main()
